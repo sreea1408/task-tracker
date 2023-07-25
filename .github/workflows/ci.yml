@@ -1,0 +1,9 @@
+name: ci
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  tauri-ci:
+    uses: sreea1408/workflows/.github/workflows/tauri-ci.yaml@main
