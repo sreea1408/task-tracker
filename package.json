@@ -10,6 +10,9 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@mantine/core": "^6.0.17",
+    "@mantine/hooks": "^6.0.17",
     "@tauri-apps/api": "^2.0.0-alpha.4",
     "@tauri-apps/cli": "^2.0.0-alpha.9",
     "@tauri-apps/plugin-shell": "^2.0.0-alpha.0",
