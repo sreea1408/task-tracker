@@ -1,0 +1,7 @@
+name: release
+on:
+  workflow_dispatch:
+
+jobs:
+  tauri-release:
+    uses: sreea1408/workflows/.github/workflows/tauri-release.yaml@main
