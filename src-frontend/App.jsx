@@ -16,8 +16,34 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *****************************************************************************/
 
+import React from "react";
+import { Tabs } from "@mantine/core";
+import Today from "./Today";
+import Calendar from "./Calendar";
+import Settings from "./Settings";
+
 function App() {
-  return <h1>Task Tracker</h1>;
+  return (
+    <Tabs defaultValue="today">
+      <Tabs.List position="center">
+        <Tabs.Tab value="today">Today</Tabs.Tab>
+        <Tabs.Tab value="calendar">Calendar</Tabs.Tab>
+        <Tabs.Tab value="settings">Settings</Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value="today" pt="xs">
+        <Today />
+      </Tabs.Panel>
+
+      <Tabs.Panel value="calendar" pt="xs">
+        <Calendar />
+      </Tabs.Panel>
+
+      <Tabs.Panel value="settings" pt="xs">
+        <Settings />
+      </Tabs.Panel>
+    </Tabs>
+  );
 }
 
 export default App;
