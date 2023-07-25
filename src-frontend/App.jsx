@@ -17,32 +17,48 @@
  *****************************************************************************/
 
 import React from "react";
-import { Tabs } from "@mantine/core";
+import { useState } from "react";
+import { Tabs, MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import Today from "./Today";
 import Calendar from "./Calendar";
 import Settings from "./Settings";
 
 function App() {
+  const [colorScheme, setColorScheme] = useState("light");
+  const toggleColorScheme = () =>
+    setColorScheme(colorScheme === "dark" ? "light" : "dark");
+
   return (
-    <Tabs defaultValue="today">
-      <Tabs.List position="center">
-        <Tabs.Tab value="today">Today</Tabs.Tab>
-        <Tabs.Tab value="calendar">Calendar</Tabs.Tab>
-        <Tabs.Tab value="settings">Settings</Tabs.Tab>
-      </Tabs.List>
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider
+        theme={{ colorScheme }}
+        withGlobalStyles
+        withNormalizeCSS
+      >
+        <Tabs defaultValue="today">
+          <Tabs.List position="center">
+            <Tabs.Tab value="today">Today</Tabs.Tab>
+            <Tabs.Tab value="calendar">Calendar</Tabs.Tab>
+            <Tabs.Tab value="settings">Settings</Tabs.Tab>
+          </Tabs.List>
 
-      <Tabs.Panel value="today" pt="xs">
-        <Today />
-      </Tabs.Panel>
+          <Tabs.Panel value="today" pt="xs">
+            <Today />
+          </Tabs.Panel>
 
-      <Tabs.Panel value="calendar" pt="xs">
-        <Calendar />
-      </Tabs.Panel>
+          <Tabs.Panel value="calendar" pt="xs">
+            <Calendar />
+          </Tabs.Panel>
 
-      <Tabs.Panel value="settings" pt="xs">
-        <Settings />
-      </Tabs.Panel>
-    </Tabs>
+          <Tabs.Panel value="settings" pt="xs">
+            <Settings />
+          </Tabs.Panel>
+        </Tabs>
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 }
 
