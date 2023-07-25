@@ -17,9 +17,48 @@
  *****************************************************************************/
 
 import React from "react";
+import {
+  Switch,
+  useMantineColorScheme,
+  useMantineTheme,
+  Group,
+} from "@mantine/core";
+import { IconSun, IconMoonStars } from "@tabler/icons-react";
+
+import "./settings.css";
+
+function Theme() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const theme = useMantineTheme();
+
+  return (
+    <div className="row">
+      <div className="col-9 menu">Theme</div>
+      <div className="col-3">
+        <Group position="right">
+          <Switch
+            checked={colorScheme === "dark"}
+            onChange={() => toggleColorScheme()}
+            size="lg"
+            onLabel={
+              <IconSun color={theme.white} size="1.25rem" stroke={1.5} />
+            }
+            offLabel={
+              <IconMoonStars
+                color={theme.colors.gray[6]}
+                size="1.25rem"
+                stroke={1.5}
+              />
+            }
+          />
+        </Group>
+      </div>
+    </div>
+  );
+}
 
 function Settings() {
-  return <>settings</>;
+  return <Theme />;
 }
 
 export default Settings;

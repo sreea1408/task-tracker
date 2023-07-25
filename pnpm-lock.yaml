@@ -14,6 +14,9 @@ dependencies:
   '@mantine/hooks':
     specifier: ^6.0.17
     version: 6.0.17(react@18.2.0)
+  '@tabler/icons-react':
+    specifier: ^2.29.0
+    version: 2.29.0(react@18.2.0)
   '@tauri-apps/api':
     specifier: ^2.0.0-alpha.4
     version: 2.0.0-alpha.4
@@ -904,6 +907,20 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.6
       react: 18.2.0
+    dev: false
+
+  /@tabler/icons-react@2.29.0(react@18.2.0):
+    resolution: {integrity: sha512-qApkLT6STXr8lL9/2JM+DTECfuGNhL8WRzMPs4twh1M1m64jeYRGRYpYPGYnI4GtwxqO3IuPKzos2XXcLb0C7Q==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@tabler/icons': 2.29.0
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: false
+
+  /@tabler/icons@2.29.0:
+    resolution: {integrity: sha512-HhDdIFzL8UmliujHEcPzoWypLmnO9MXFipYzwRnjAYXYpU68Kiw5KROtVxJ3h2cXTXj6ZMQZgXPdr3CEhBCCJw==}
     dev: false
 
   /@tauri-apps/api@2.0.0-alpha.4:
@@ -2307,7 +2324,6 @@ packages:
   /object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /object-inspect@1.12.3:
     resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
@@ -2520,7 +2536,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /punycode@2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
