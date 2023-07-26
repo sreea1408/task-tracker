@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">task-tracker</string>
+    <string name="main_activity_title">task-tracker</string>
+</resources>
