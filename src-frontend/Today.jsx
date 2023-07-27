@@ -17,9 +17,50 @@
  *****************************************************************************/
 
 import React from "react";
+import { useState } from "react";
+import { Button, Select } from "@mantine/core";
+
+import "./today.css";
 
 function Today() {
-  return <>today</>;
+  const [data, setData] = useState(["world"]);
+  const [selectDisabled, setSelectDisabled] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
+  return (
+    <div className="center-screen">
+      <Select
+        placeholder="Select Task"
+        searchable
+        creatable
+        getCreateLabel={(query) => `+ ${query}`}
+        disabled={selectDisabled}
+        onChange={(query) => {
+          console.log(query);
+          setSelectDisabled(true);
+          setButtonDisabled(false);
+        }}
+        onCreate={(query) => {
+          const item = { value: query, label: query };
+          setData((current) => [...current, item]);
+          return item;
+        }}
+        data={data}
+        defaultValue={""}
+      />
+      <Button
+        fullWidth
+        disabled={buttonDisabled}
+        color="red"
+        onClick={() => {
+          setButtonDisabled(true);
+          setSelectDisabled(false);
+        }}
+      >
+        End Task
+      </Button>
+    </div>
+  );
 }
 
 export default Today;

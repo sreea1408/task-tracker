@@ -16,10 +16,9 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *****************************************************************************/
 
-import React from "react";
+@import "common.css";
 
-function Calendar() {
-  return <>calendar</>;
+.delete-btn {
+  position: fixed;
+  padding: 15px;
 }
-
-export default Calendar;

@@ -20,8 +20,9 @@ import React from "react";
 import { useState } from "react";
 import { Tabs, MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import Today from "./Today";
-import Calendar from "./Calendar";
+import Timesheet from "./Timesheet";
 import Settings from "./Settings";
+import Tasks from "./Tasks";
 
 function App() {
   const [colorScheme, setColorScheme] = useState("light");
@@ -40,20 +41,25 @@ function App() {
       >
         <Tabs defaultValue="today">
           <Tabs.List position="center">
+            <Tabs.Tab value="tasks">Tasks</Tabs.Tab>
             <Tabs.Tab value="today">Today</Tabs.Tab>
-            <Tabs.Tab value="calendar">Calendar</Tabs.Tab>
+            <Tabs.Tab value="timesheet">Timesheet</Tabs.Tab>
             <Tabs.Tab value="settings">Settings</Tabs.Tab>
           </Tabs.List>
 
-          <Tabs.Panel value="today" pt="xs">
+          <Tabs.Panel value="tasks">
+            <Tasks />
+          </Tabs.Panel>
+
+          <Tabs.Panel value="today">
             <Today />
           </Tabs.Panel>
 
-          <Tabs.Panel value="calendar" pt="xs">
-            <Calendar />
+          <Tabs.Panel value="timesheet">
+            <Timesheet />
           </Tabs.Panel>
 
-          <Tabs.Panel value="settings" pt="xs">
+          <Tabs.Panel value="settings">
             <Settings />
           </Tabs.Panel>
         </Tabs>
